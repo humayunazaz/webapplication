@@ -1,0 +1,80 @@
+<nav
+  class="navbar flex justify-between bg-[#3F51B5] pl-[20px] pr-[15px] py-[15px] relative"
+>
+  <div class="left-side w-2/5 flex items-center">
+    <div class="hamburger-icon-div">
+      <!-- <img src="assets/image/hamburger-icon.png" /> -->
+      <mat-icon
+        class="text-[#fff] hamburgericon-img"
+        (click)="togglehamburgermenu()"
+        >view_headline</mat-icon
+      >
+    </div>
+    <div
+      class="hamburger-menu bg-[#edf0ff] w-full absolute top-[78px] p-[15px] left-[0] z-[9999] border-[#eee] border-solid"
+      *ngIf="showhamburgermenu"
+    >
+      <ul class="text-center">
+        <li class="py-3 text-[#475BE8]">
+          <a routerLink="/dashboard" (click)="showhamburgermenu = false"
+            >Dashboard</a
+          >
+        </li>
+        <li class="py-3 text-[#475BE8]">
+          <a routerLink="/contact" (click)="showhamburgermenu = false"
+            >Contacts</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="nav-center w-1/5 flex justify-center items-center">
+    <div class="nav-menu">
+      <a class="mr-[20px] text-[#ffffff]" routerLink="/dashboard">Dashboard</a>
+      <a class="text-[#ffffff]" routerLink="/contact">Contacts</a>
+    </div>
+  </div>
+  <div class="right-side w-2/5 flex justify-end items-center">
+    <div class="nav-notifications-div relative">
+      <div class="bell-icon-div">
+        <button
+          mat-button
+          [matMenuTriggerFor]="menu"
+          (click)="showhamburgermenu = false"
+        >
+          <mat-icon
+            matBadge="2"
+            matBadgeColor="warn"
+            matBadgeSize="small"
+            fontIcon="notifications"
+            class="text-white"
+          ></mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>John invited you</button>
+          <button mat-menu-item>You have message from Peter</button>
+        </mat-menu>
+      </div>
+    </div>
+    <div class="nav-profile">
+      <button
+        mat-button
+        [matMenuTriggerFor]="profile"
+        (click)="showhamburgermenu = false"
+      >
+        <div class="flex">
+          <div class="profile-img-div">
+            <img class="w-[40px] h-[40px]" src="assets/image/avatar.webp" />
+          </div>
+          <div class="profile-details-div pl-[10px] text-start flex flex-col">
+            <span class="text-[14px] text-[#ffffff]">{{ userName }}</span>
+            <span class="text-[14px] text-[#ffffff]">Company Manager</span>
+          </div>
+        </div>
+      </button>
+      <mat-menu #profile="matMenu" xPosition="before">
+        <button mat-menu-item (click)="logoutHandler()">Logout</button>
+      </mat-menu>
+    </div>
+  </div>
+</nav>

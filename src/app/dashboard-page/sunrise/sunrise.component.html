@@ -1,0 +1,67 @@
+<div class="catFactContainer mt-[30px]">
+  <mat-card>
+    <div class="title text-left text-[48px] font-bold mb-[25px]">
+      <h3>Sunrise / Sunset Information</h3>
+    </div>
+    <div class="sunriseFormContainer">
+      <form
+        class="flex flex-col"
+        [formGroup]="sunriseForm"
+        (ngSubmit)="onSubmitSunriseHandler()"
+      >
+        <div class="outer-wrapper">
+          <mat-form-field class="example-full-width">
+            <mat-label>Enter Latitude:</mat-label>
+            <input matInput formControlName="lat" />
+            <mat-error
+              *ngIf="l['lat'].hasError('required') && l['lat'].touched"
+            >
+              Please enter a latitude
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Enter Longitude:</mat-label>
+            <input matInput formControlName="lng" />
+            <mat-error
+              *ngIf="l['lng'].hasError('required') && l['lng'].touched"
+            >
+              Please enter a longitude
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Pick a date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date" />
+            <mat-error
+              *ngIf="l['date'].hasError('required') && l['date'].touched"
+            >
+              Please enter a valid date
+            </mat-error>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <div class="actionButton">
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="sunriseForm.invalid"
+              class="h-[56px]"
+            >
+              Get Sunrise / Sunset Time
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="sunriseTimeDisplayContainer">
+      <div class="times my-10 text-center" *ngIf="sunriseSunset">
+        <h3 class="text-[48px]">Sunrise: {{ sunriseSunset.sunrise }}</h3>
+        <h3 class="text-[48px]">Sunset: {{ sunriseSunset.sunset }}</h3>
+      </div>
+    </div>
+  </mat-card>
+</div>

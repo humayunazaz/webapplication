@@ -1,0 +1,108 @@
+/* @media screen and (max-width: 1300px) {
+    .right-side img{
+       margin-top: 26%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .right-side img{
+        width: 80%;
+       margin-top: 36%;
+    }
+}
+
+@media screen and (max-width: 868px) {
+    .right-side img{
+        width: 92%;
+       margin-top: 41%;
+    }
+} */
+
+@media screen and (max-width: 768px) {
+    .right-side{
+        display: none;
+    }
+    .siginpage-container{
+        display: flex;
+        justify-content: center;
+        
+    }
+    .heading h1{
+        font-size: 36px;
+    }
+    .description p {
+        font-size: 30px;
+    }
+    label{
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    input {
+        margin-top: 12px;
+    }
+    button {
+        font-size: 25px;
+    }
+    .link {
+        margin-top: 14px;
+    }
+    .signup-link{
+        font-size: 25px;
+    }
+    }
+
+    @media screen and (max-width: 375px) {
+        
+      .heading h1{
+      font-size: 30px;
+      text-align: center;
+        }
+     .description p {
+     font-size: 25px;
+     text-align: center;
+    }
+    label{
+    font-size: 25px;  
+    padding-left: 10px;
+}
+input {
+    margin: 7px 9px;
+}
+.signup-link{
+    font-size: 22px;
+}
+.forget {
+    justify-content: space-around;
+}
+.link {
+    margin-top: 10px;
+    padding-right: 22px;
+    
+}
+button {
+    width:97%;
+    margin-left: 5px;
+    font-size: 22px;
+}
+    }
+    @media screen and (max-width: 320px) {
+        label{
+            font-size: 19px;  
+            padding-left: 12px; 
+    }
+    .signup-link{
+        font-size: 20px;
+    }
+    .link {
+        margin-top: 4px;
+    }
+    button {
+        width: 90%;
+    margin-left: 12px;
+    font-size: 21px;
+    }
+   
+    }
+.featureImage img {
+    max-height: 100%;
+}

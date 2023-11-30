@@ -1,0 +1,50 @@
+<div class="siginpage-container h-screen flex">
+  <div class="left-side w-full md:w-6/12 flex items-center justify-center">
+    <div class="content w-[362px]">
+      <div class="heading">
+        <h1>Welcome back</h1>
+      </div>
+      <div class="description">
+        <p class="text-[#808191]">Please enter your details.</p>
+      </div>
+      <div class="signin-form pt-[2rem]">
+        <form
+          class="flex flex-col"
+          [formGroup]="signinForm"
+          (ngSubmit)="onSubmit()"
+        >
+          <label class="mb-[0.4rem]" for="fname">Username</label>
+          <input
+            type="text"
+            name="username"
+            placeholder="Enter your username"
+            class="py-[0.7rem] px-[0.8rem] border-2 border-[#E4E4E4] rounded-[1rem]"
+            [class.is-invalid]="f['username'].invalid && f['username'].touched"
+            formControlName="username"
+          />
+          <div
+            class="alert alert-danger pt-[0.8rem]"
+            *ngIf="f['username'].invalid && f['username'].touched"
+          >
+            <div
+              class="text-red-600"
+              *ngIf="f['username'].errors && f['username'].errors['required']"
+            >
+              username is required
+            </div>
+          </div>
+          <button
+            type="submit"
+            [disabled]="signinForm.invalid"
+            class="w-full py-[0.7rem] bg-[#475BE8] text-white rounded-[1rem] mt-[2rem]"
+          >
+            Sign in
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="right-side w-full md:w-6/12 flex items-center featureImage">
+    <img class="w-full" src="../../../assets/image/amico.png" />
+  </div>
+</div>

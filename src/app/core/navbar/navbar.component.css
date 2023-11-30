@@ -1,0 +1,60 @@
+.hamburger-icon-div {display: none;}
+
+.nav-profile button { padding-top:1.5rem; padding-bottom:1.5rem; }
+
+::ng-deep .mat-icon {
+    font-size: 25px !important;
+}
+
+::ng-deep .mat-mdc-button, .mat-mdc-outlined-button {
+    --mat-mdc-button-persistent-ripple-color: transparent;
+    --mat-mdc-button-ripple-color: transparent;
+}
+
+::ng-deep .mat-badge-content {
+    top:-4px !important;
+    right:-12px !important;
+}
+
+@media screen and (min-width: 767px) {
+    .left-side { display: none; }
+}
+
+@media screen and (max-width: 767px) {
+
+    nav { padding-right:20px; }
+
+    .hamburger-icon-div {display: block;}
+
+    .nav-menu { display:none; }
+
+    .nav-notifications-div { margin-left:auto; }
+
+    .profile-details-div { padding-left:5px;}
+
+    .nav-profile { padding-left:0px !important;}
+
+    .nav-center { width: 0% !important; }
+
+    .left-side { width: 20% !important; }
+
+    .right-side { 
+        width: 80% !important; 
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .navbar {
+        padding-left:10px;
+        padding-right:10px;
+    }
+
+    .nav-profile {
+        padding-left:0px;
+    }
+
+    .profile-details-div {
+        padding-left:5px;
+    }
+}

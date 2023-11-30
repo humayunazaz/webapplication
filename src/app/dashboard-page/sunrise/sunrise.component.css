@@ -1,0 +1,40 @@
+mat-card{
+    padding: 20px 20px;
+    border-radius: 20px;
+}
+.outer-wrapper{
+  display: flex;
+  gap:25px;
+  
+}
+.actionButton button {
+    height: 56px!important;
+}
+.outer-wrapper mat-form-field{
+    flex: 1;
+}
+
+@media screen and (max-width: 767px) {
+    .title h3, .times h3{
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .outer-wrapper{
+        gap: 10px
+    }
+}
+
+@media screen and (max-width: 810px) {
+
+    .outer-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap:14px;
+    }
+}
+
+
+
+
